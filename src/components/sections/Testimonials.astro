@@ -1,0 +1,48 @@
+---
+import VideoBlock from "@/components/ui/VideoBlock.astro";
+import Carousel from "@/components/ui/Carousel.astro";
+
+const testimonials = [
+  {
+    label: "Témoignage — Gérant de salle de sport",
+    caption: "Retour d'expérience sur l'intégration de Fulgurance dans son centre",
+  },
+  {
+    label: "Témoignage — Coach sportif",
+    caption: "Comment la PowerSuit a transformé son offre de coaching",
+  },
+  {
+    label: "Témoignage — Gérant de centre EMS",
+    caption: "Pourquoi il a choisi Fulgurance pour équiper sa structure",
+  },
+  {
+    label: "Témoignage — Responsable d'école sportive",
+    caption: "L'intégration de Fulgurance dans les programmes d'entraînement",
+  },
+];
+---
+
+<section class="border-b border-border-soft/60 bg-surface/40">
+  <div class="mx-auto max-w-[1600px] px-6 py-20">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+        Ils ont déjà fait le choix de <span class="brand-gradient-text">Fulgurance</span>
+      </h2>
+      <p class="mt-4 text-zinc-400">
+        Gérants de salles, coachs, centres EMS, écoles sportives — découvrez leurs retours d&apos;expérience.
+      </p>
+    </div>
+
+    <div class="mt-14">
+      <Carousel>
+        <Fragment slot="items">
+          {testimonials.map((t) => (
+            <div class="snap-start flex-shrink-0 min-w-[320px] sm:min-w-[400px] lg:min-w-[34%]">
+              <VideoBlock label={t.label} caption={t.caption} class="aspect-[4/5] sm:aspect-video" />
+            </div>
+          ))}
+        </Fragment>
+      </Carousel>
+    </div>
+  </div>
+</section>

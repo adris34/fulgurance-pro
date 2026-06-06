@@ -1,0 +1,55 @@
+---
+// Note : la taille de chaque slide est définie par l'appelant (wrapper autour
+// de chaque élément placé dans le slot "items"), pour rester compatible avec
+// les classes Tailwind générées statiquement (JIT).
+type Props = {
+  class?: string;
+};
+
+const { class: className = "" } = Astro.props;
+---
+
+<div class={`carousel relative ${className}`}>
+  <div
+    class="carousel-track flex gap-6 overflow-x-auto scroll-smooth pb-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden snap-x snap-mandatory"
+  >
+    <slot name="items" />
+  </div>
+
+  <div class="mt-6 flex items-center justify-center gap-3">
+    <button
+      type="button"
+      class="carousel-prev flex h-10 w-10 items-center justify-center rounded-full border border-border-soft bg-surface text-zinc-300 transition-colors hover:border-fulgurance-red/60 hover:text-white"
+      aria-label="Précédent"
+    >
+      <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4">
+        <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+    <button
+      type="button"
+      class="carousel-next flex h-10 w-10 items-center justify-center rounded-full border border-border-soft bg-surface text-zinc-300 transition-colors hover:border-fulgurance-red/60 hover:text-white"
+      aria-label="Suivant"
+    >
+      <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4">
+        <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>(".carousel").forEach((carousel) => {
+    const track = carousel.querySelector<HTMLElement>(".carousel-track");
+    const prev = carousel.querySelector<HTMLButtonElement>(".carousel-prev");
+    const next = carousel.querySelector<HTMLButtonElement>(".carousel-next");
+    if (!track) return;
+
+    const scrollByDir = (dir: 1 | -1) => {
+      track.scrollBy({ left: dir * track.clientWidth * 0.9, behavior: "smooth" });
+    };
+
+    prev?.addEventListener("click", () => scrollByDir(-1));
+    next?.addEventListener("click", () => scrollByDir(1));
+  });
+</script>

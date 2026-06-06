@@ -1,0 +1,96 @@
+---
+const structureTypes = ["Salle de sport / centre EMS", "École ou club sportif", "Coach indépendant", "Autre"];
+---
+
+<section id="rdv" class="border-b border-border-soft/60">
+  <div class="mx-auto max-w-3xl px-6 py-20">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+        Réservez votre <span class="brand-gradient-text">appel découverte</span>
+      </h2>
+      <p class="mt-4 text-zinc-400">
+        Quelques informations rapides, puis choisissez directement votre créneau. Aucun engagement —
+        juste un échange pour voir si Fulgurance est fait pour votre structure.
+      </p>
+    </div>
+
+    <form
+      id="booking-form"
+      class="mx-auto mt-12 max-w-xl space-y-5 rounded-2xl border border-border-soft bg-surface p-8"
+    >
+      <div>
+        <label class="mb-2 block text-sm font-medium text-zinc-300">Vous êtes…</label>
+        <div class="grid grid-cols-2 gap-2 sm:grid-cols-4">
+          {structureTypes.map((type) => (
+            <label class="flex cursor-pointer items-center justify-center rounded-lg border border-border-soft bg-surface-2 px-2 py-2.5 text-center text-xs text-zinc-300 transition-colors has-[:checked]:border-fulgurance-red has-[:checked]:text-white">
+              <input type="radio" name="structure" value={type} required class="sr-only" />
+              {type}
+            </label>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <label class="mb-2 block text-sm font-medium text-zinc-300">
+          Combien de clients accompagnez-vous chaque semaine, environ ?
+        </label>
+        <input
+          type="text"
+          name="volume"
+          required
+          placeholder="Ex : 40 clients par semaine"
+          class="w-full rounded-lg border border-border-soft bg-surface-2 px-4 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-600 focus:border-fulgurance-red focus:outline-none"
+        />
+      </div>
+
+      <div class="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label class="mb-2 block text-sm font-medium text-zinc-300">Ville</label>
+          <input
+            type="text"
+            name="city"
+            required
+            placeholder="Ex : Montpellier"
+            class="w-full rounded-lg border border-border-soft bg-surface-2 px-4 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-600 focus:border-fulgurance-red focus:outline-none"
+          />
+        </div>
+        <div>
+          <label class="mb-2 block text-sm font-medium text-zinc-300">Email professionnel</label>
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="vous@votrecentre.fr"
+            class="w-full rounded-lg border border-border-soft bg-surface-2 px-4 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-600 focus:border-fulgurance-red focus:outline-none"
+          />
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        class="mt-2 w-full rounded-full brand-gradient px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-fulgurance-red/30 transition-transform hover:scale-[1.01]"
+      >
+        Choisir mon créneau →
+      </button>
+    </form>
+
+    <div id="booking-result" class="mx-auto mt-12 hidden max-w-xl rounded-2xl border border-border-soft bg-surface p-8 text-center">
+      <h3 class="text-lg font-semibold">Merci ! Choisissez votre créneau ci-dessous</h3>
+      <div class="mt-6 flex h-[420px] items-center justify-center rounded-xl border border-dashed border-border-soft bg-surface-2 text-sm text-zinc-500">
+        Emplacement intégration Calendly / Cal.com — lien à venir
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // TODO phase 2 : envoyer ces données vers Klaviyo / CRM avant d'afficher Calendly
+  const form = document.querySelector<HTMLFormElement>("#booking-form");
+  const result = document.querySelector<HTMLElement>("#booking-result");
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    form.classList.add("hidden");
+    result?.classList.remove("hidden");
+  });
+</script>

@@ -1,0 +1,34 @@
+---
+import VideoBlock from "@/components/ui/VideoBlock.astro";
+---
+
+<section class="border-b border-border-soft/60">
+  <div class="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[1fr_1.35fr] lg:items-center">
+    <div>
+      <p class="mb-4 inline-flex items-center gap-2 rounded-full border border-border-soft bg-surface px-4 py-2 text-xs font-medium uppercase tracking-wider text-zinc-300">
+        <span class="h-2 w-2 rounded-full brand-gradient" />
+        Entreprise française · Vue dans QVEMA Saison 4
+      </p>
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+        Pourquoi <span class="brand-gradient-text">Fulgurance</span> ?
+      </h2>
+      <p class="mt-6 text-zinc-400 leading-relaxed">
+        Notre histoire s&apos;est construite autour de notre propre expérience dans la pratique
+        du sport en électrostimulation. En exploitant nos centres d&apos;EMS, nous avons identifié
+        toutes les faiblesses des technologies disponibles sur le marché : tarifs extrêmement
+        élevés, problèmes de connectique, SAV inexistant, absence de solutions de financement…
+      </p>
+      <p class="mt-4 text-zinc-400 leading-relaxed">
+        Nous avons décidé de construire la solution que nous aurions voulu avoir : une
+        technologie fiable, sans fil, accompagnée d&apos;un vrai service, conçue par des athlètes,
+        entraîneurs sportifs, médecins et spécialistes de la rééducation.
+      </p>
+    </div>
+
+    <VideoBlock
+      youtubeId="V1Va_dIKs7s"
+      label="La genèse de Fulgurance"
+      caption="L'équipe Fulgurance vous présente l'histoire et la vision du projet"
+    />
+  </div>
+</section>

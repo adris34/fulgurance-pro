@@ -1,0 +1,128 @@
+---
+import '../styles/global.css';
+
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+const {
+  title = "Fulgurance Pro — Équipez votre centre avec l'EMS nouvelle génération",
+  description = "Salles de sport, écoles sportives, coachs : équipez votre structure avec la technologie d'électrostimulation Fulgurance, conçue et fabriquée en France. Réservez votre appel découverte (sans engagement).",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL("/images/fulgurance-logo.svg", Astro.site);
+
+// Données structurées schema.org : aident à la fois le SEO classique (Google)
+// et la compréhension du contenu par les moteurs/agents IA (LLM, "AEO/GEO").
+const organizationLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Fulgurance",
+  url: Astro.site?.toString(),
+  logo: ogImageURL.toString(),
+  description:
+    "Fulgurance conçoit et fabrique en France des équipements professionnels d'électrostimulation (EMS) — combinaisons connectées et générateurs — pour les salles de sport, écoles sportives, clubs et coachs.",
+  areaServed: "FR",
+  knowsAbout: [
+    "Électrostimulation musculaire (EMS)",
+    "Équipement professionnel pour salles de sport",
+    "Combinaison EMS connectée",
+    "Générateur EMS sans fil",
+  ],
+};
+
+const productLd = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Fulgurance PowerSuit & Générateur ProPulse",
+  brand: { "@type": "Brand", name: "Fulgurance" },
+  description:
+    "Solution professionnelle d'électrostimulation pour salles de sport, écoles sportives et coachs : combinaison PowerSuit sans fil et générateur ProPulse, pilotables via l'application Fulgurance pour des séances individuelles ou collectives.",
+  audience: {
+    "@type": "BusinessAudience",
+    audienceType: "Salles de sport, centres EMS, écoles sportives, coachs sportifs professionnels",
+  },
+};
+
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Pourquoi un appel est-il nécessaire avant de commander ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Chaque centre, chaque école et chaque coach a des besoins différents (nombre de générateurs, de combinaisons, accompagnement). L'appel permet de comprendre l'activité et de proposer la configuration la plus adaptée, sans engagement.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Quels sont les délais de livraison de Fulgurance ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Fulgurance est une entreprise française avec des délais rapides et maîtrisés, communiqués lors de l'appel découverte selon la configuration retenue.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Qu'est-ce qui est inclus dans l'accompagnement Fulgurance ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Tous les packs Fulgurance incluent une formation complète à l'utilisation du matériel et des programmes, une assurance avec remplacement du générateur sous 24h, ainsi qu'un service après-vente réactif.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "La technologie Fulgurance est-elle adaptée à mon type de structure ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Salles de sport, centres EMS, écoles sportives, clubs et coachs indépendants : la technologie Fulgurance s'adapte à différents formats d'encadrement, individuels comme collectifs.",
+      },
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="fr" class="h-full antialiased">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/images/fulgurance-logo.svg" />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Fulgurance" />
+    <meta name="language" content="fr" />
+
+    <!-- Open Graph / réseaux sociaux -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Fulgurance Pro" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:locale" content="fr_FR" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <!-- Données structurées schema.org : aident le SEO et la compréhension du
+         contenu de la page par les agents/LLM (recherche IA, ChatGPT, Perplexity…) -->
+    <script type="application/ld+json" set:html={JSON.stringify(organizationLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(productLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
+  </head>
+  <body class="min-h-full flex flex-col bg-background text-foreground">
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,38 @@
+---
+const guarantees = [
+  {
+    title: "Assurance & remplacement sous 24h",
+    text: "En cas de casse, perte ou vol de votre générateur, nous vous en renvoyons un nouveau sous 24h. Votre activité ne s'arrête jamais.",
+  },
+  {
+    title: "Formation incluse",
+    text: "Chaque pack inclut une formation complète pour vous et vos équipes : prise en main du matériel, programmes, bonnes pratiques d'encadrement.",
+  },
+  {
+    title: "SAV réactif, by Fulgurance",
+    text: "Fini les délais interminables et l'absence de réponse. Notre service après-vente est pensé pour les professionnels qui ne peuvent pas se permettre d'attendre.",
+  },
+];
+---
+
+<section class="border-b border-border-soft/60 bg-surface/40">
+  <div class="mx-auto max-w-6xl px-6 py-20">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+        Un accompagnement <span class="brand-gradient-text">à la hauteur</span> de votre investissement
+      </h2>
+      <p class="mt-4 text-zinc-400">
+        Nous savons ce qu&apos;il en coûte d&apos;être livré à soi-même avec du matériel professionnel. Chez Fulgurance, vous n&apos;êtes jamais seul.
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {guarantees.map((g) => (
+        <div class="rounded-2xl border border-border-soft bg-surface p-6">
+          <h3 class="text-lg font-semibold">{g.title}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-zinc-400">{g.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

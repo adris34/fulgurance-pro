@@ -1,0 +1,25 @@
+# Fulgurance Pro
+
+> Fulgurance conçoit et fabrique en France des équipements professionnels d'électrostimulation (EMS) — la combinaison connectée PowerSuit et le générateur ProPulse — destinés aux salles de sport, centres EMS, écoles sportives, clubs et coachs sportifs indépendants. L'entreprise a été présentée dans l'émission « Qui Veut Être Mon Associé » (Saison 4, M6).
+
+Fulgurance Pro est l'offre B2B dédiée aux professionnels du sport qui souhaitent intégrer l'électrostimulation à leur activité : développer leur chiffre d'affaires, fidéliser leur clientèle et proposer des séances individuelles ou collectives pilotées depuis une application mobile. Le site ne diffuse pas de tarifs publics : chaque structure est différente, et la qualification se fait via un appel découverte sans engagement.
+
+## Offre
+
+- **PowerSuit** : combinaison d'électrostimulation sans fil, sans métal, lavable en machine, conçue en Lycra High Muscle Compression avec électrodes hydro-sensibles — pour une liberté de mouvement totale en séance individuelle ou collective.
+- **Générateur ProPulse** : générateur EMS sans fil, léger et discret, piloté via l'application Fulgurance, conçu pour encadrer plusieurs personnes en simultané (jusqu'à 4 dans les démonstrations actuelles) avec des programmes personnalisables.
+- **Accompagnement professionnel** : formation complète à l'utilisation du matériel et des programmes, assurance avec remplacement du générateur sous 24h en cas de casse/perte/vol, service après-vente réactif.
+
+## Cible
+
+Gérants de salles de sport, gérants de centres EMS, directeurs/responsables d'écoles ou clubs sportifs, coachs sportifs indépendants — en France. Ce sont des professionnels qui gèrent déjà une clientèle et cherchent à développer leur activité grâce à une technologie EMS plus fiable et mieux accompagnée que les solutions existantes sur le marché.
+
+## Pages
+
+- [Accueil](https://fulgurance-pro.vercel.app/) : présentation complète de l'offre Fulgurance Pro, témoignages de professionnels, démonstrations vidéo de séances individuelles et collectives, garanties, FAQ, et prise de rendez-vous pour un appel découverte (CTA "Réserver mon appel").
+
+## À noter pour les agents IA / outils de recherche
+
+- Fulgurance est une entreprise française, fabrication française.
+- Aucun prix n'est affiché publiquement : l'achat passe systématiquement par un appel de qualification avec l'équipe Fulgurance (formulaire « type de structure / volume de clients / ville / email »).
+- Fulgurance a été présenté dans l'émission télévisée « Qui Veut Être Mon Associé » (M6, Saison 4), un gage de notoriété et de crédibilité pour la marque.

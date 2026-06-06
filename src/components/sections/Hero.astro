@@ -1,0 +1,49 @@
+---
+import CtaButton from "@/components/ui/CtaButton.astro";
+import VideoBlock from "@/components/ui/VideoBlock.astro";
+---
+
+<section class="relative overflow-hidden border-b border-border-soft/60">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_-10%,rgba(240,20,32,0.18),transparent_50%)]" />
+  <div class="relative mx-auto flex max-w-6xl flex-col items-center px-6 py-20 text-center lg:py-28">
+    <p class="mb-6 inline-flex items-center gap-2 rounded-full border border-border-soft bg-surface px-4 py-2 text-xs font-medium uppercase tracking-wider text-zinc-300">
+      <span class="h-2 w-2 rounded-full brand-gradient" />
+      Vu dans « Qui Veut Être Mon Associé » — Saison 4 · M6
+    </p>
+
+    <h1 class="max-w-3xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
+      Vous gérez une salle de sport, un centre, ou vous êtes coach&nbsp;?
+      <span class="block brand-gradient-text">Équipez-vous avec l&apos;EMS nouvelle génération.</span>
+    </h1>
+
+    <div class="mt-10 w-full max-w-5xl">
+      <VideoBlock
+        youtubeId="Vihgk2H-Dg8"
+        label="Équipez vos clients en quelques secondes et pilotez vos séances de groupe ou individuelles"
+        caption="Aucune installation lourde, aucun matériel encombrant : tout se gère en quelques minutes, n'importe où"
+      />
+    </div>
+
+    <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+      <CtaButton href="#rdv">Réserver mon appel découverte</CtaButton>
+      <a href="#vsl" class="text-sm font-medium text-zinc-400 underline-offset-4 hover:text-white hover:underline">
+        Voir la technologie en action ↓
+      </a>
+    </div>
+
+    <p class="mt-10 max-w-2xl text-lg text-zinc-400">
+      Vos clients veulent des résultats visibles, vite, et sans s&apos;épuiser pendant des heures.
+      Avec Fulgurance, offrez-leur des séances courtes, intenses et ultra-efficaces — et
+      transformez cette demande en nouvelle source de revenus pour votre structure.
+    </p>
+
+    <div class="mt-6 flex flex-wrap items-center justify-center gap-2.5">
+      {["Entreprise française", "Garantie & SAV inclus", "Sans engagement avant l'appel"].map((item) => (
+        <span class="inline-flex items-center gap-1.5 rounded-full border border-border-soft bg-surface px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-wider text-zinc-400">
+          <span class="h-1.5 w-1.5 rounded-full brand-gradient" />
+          {item}
+        </span>
+      ))}
+    </div>
+  </div>
+</section>

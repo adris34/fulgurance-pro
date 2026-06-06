@@ -1,0 +1,29 @@
+---
+import VideoBlock from "@/components/ui/VideoBlock.astro";
+import CtaButton from "@/components/ui/CtaButton.astro";
+---
+
+<section id="vsl" class="border-b border-border-soft/60 bg-surface/40">
+  <div class="mx-auto max-w-6xl px-6 py-20 text-center">
+    <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+      Gérez vos séances collectives <span class="brand-gradient-text">en toute simplicité</span>
+    </h2>
+    <p class="mx-auto mt-4 max-w-2xl text-zinc-400">
+      Une séance complète filmée où un coach encadre 4 personnes en simultané, en pilotant
+      toute la séance directement depuis l&apos;application Fulgurance — la preuve concrète
+      de ce que vous pourrez proposer à vos propres clients, en groupe comme en individuel.
+    </p>
+
+    <div class="mx-auto mt-10 w-full max-w-5xl">
+      <VideoBlock
+        youtubeId="Mvv_ulaQP4A"
+        label="Pilotez des séances individuelles ou de groupes"
+        caption="Mise en place, encadrement collectif, pilotage en temps réel — la technologie expliquée en conditions réelles"
+      />
+    </div>
+
+    <div class="mt-10">
+      <CtaButton href="#rdv">Échanger avec notre équipe</CtaButton>
+    </div>
+  </div>
+</section>

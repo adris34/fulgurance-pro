@@ -1,0 +1,24 @@
+---
+type Props = {
+  href?: string;
+  variant?: "primary" | "secondary";
+  class?: string;
+};
+
+const { href = "#rdv", variant = "primary", class: className = "" } = Astro.props;
+
+const base =
+  "inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide transition-transform hover:scale-[1.03] active:scale-[0.98]";
+
+const styles =
+  variant === "primary"
+    ? "brand-gradient text-white shadow-lg shadow-fulgurance-red/30"
+    : "border border-border-soft bg-surface text-zinc-100 hover:border-fulgurance-red/60";
+---
+
+<a href={href} class={`${base} ${styles} ${className}`}>
+  <slot />
+  <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4">
+    <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+</a>

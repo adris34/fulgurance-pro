@@ -1,0 +1,78 @@
+---
+type Props = {
+  /** ID YouTube (la partie après v= dans l'URL). Laisser vide tant que le lien n'est pas fourni. */
+  youtubeId?: string;
+  /** Titre affiché sur le placeholder / utilisé en alt et en title de l'iframe */
+  label: string;
+  /** Texte de sous-titre optionnel affiché sous le label sur le placeholder */
+  caption?: string;
+  class?: string;
+};
+
+const { youtubeId, label, caption, class: className = "" } = Astro.props;
+const uid = `video-${Math.random().toString(36).slice(2, 9)}`;
+---
+
+<div
+  class={`video-block relative w-full overflow-hidden rounded-2xl border border-border-soft bg-surface aspect-video ${className}`}
+  data-youtube-id={youtubeId ?? ""}
+  data-label={label}
+  id={uid}
+>
+  <button
+    type="button"
+    class="video-trigger group absolute inset-0 flex h-full w-full flex-col items-center justify-center gap-4 bg-gradient-to-br from-surface to-surface-2 px-6 text-center"
+    aria-label={`Lire la vidéo : ${label}`}
+  >
+    {youtubeId ? (
+      <span
+        class="absolute inset-0 bg-cover bg-center opacity-60 transition-opacity group-hover:opacity-40"
+        style={`background-image: url(https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg)`}
+      />
+    ) : (
+      <span class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(240,20,32,0.18),transparent_55%)]" />
+    )}
+
+    <span class="relative flex h-16 w-16 items-center justify-center rounded-full brand-gradient shadow-lg shadow-fulgurance-red/30 transition-transform group-hover:scale-110">
+      <svg viewBox="0 0 24 24" fill="white" class="ml-1 h-7 w-7">
+        <path d="M8 5v14l11-7z" />
+      </svg>
+    </span>
+
+    <span class="relative max-w-sm text-sm font-medium uppercase tracking-wide text-zinc-300">
+      {label}
+    </span>
+    {caption && <span class="relative max-w-xs text-xs text-zinc-500">{caption}</span>}
+    {!youtubeId && (
+      <span class="relative rounded-full border border-border-soft bg-black/30 px-3 py-1 text-[11px] uppercase tracking-wider text-zinc-500">
+        Emplacement vidéo — lien à venir
+      </span>
+    )}
+  </button>
+</div>
+
+<script>
+  // Facade YouTube : on n'injecte l'iframe qu'au clic, pour ne jamais charger
+  // de ressources YouTube tant que l'utilisateur n'a pas manifesté d'intention.
+  document.querySelectorAll<HTMLElement>(".video-block").forEach((block) => {
+    const youtubeId = block.dataset.youtubeId;
+    if (!youtubeId) return;
+
+    const trigger = block.querySelector(".video-trigger");
+    trigger?.addEventListener(
+      "click",
+      () => {
+        const label = block.dataset.label ?? "Vidéo Fulgurance";
+        const iframe = document.createElement("iframe");
+        iframe.className = "absolute inset-0 h-full w-full";
+        iframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1`;
+        iframe.title = label;
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+        iframe.allowFullscreen = true;
+        block.innerHTML = "";
+        block.appendChild(iframe);
+      },
+      { once: true }
+    );
+  });
+</script>

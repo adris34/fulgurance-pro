@@ -1,0 +1,42 @@
+---
+const reasons = [
+  {
+    number: "01",
+    title: "Attirez une nouvelle clientèle",
+    text: "Proposez des séances en extérieur, des circuits training et des activités plus dynamiques grâce à la liberté de mouvement sans fil — de quoi convertir les adeptes des technologies câblées. Et en étant équipé de la dernière innovation EMS, vous devenez un centre de référence : les curieux viennent tester Fulgurance chez vous… et deviennent de nouveaux abonnés.",
+  },
+  {
+    number: "02",
+    title: "Développez votre chiffre d'affaires par client",
+    text: "Séduits par le confort et l'efficacité de la technologie, vos clients augmentent naturellement leur nombre de séances et adoptent plus facilement de nouveaux packs (remise en forme, performance, bien-être). Une technologie aussi performante justifie aussi un positionnement premium : vos clients sont prêts à payer plus pour des séances plus agréables et plus engageantes.",
+  },
+  {
+    number: "03",
+    title: "Gagnez du temps et réduisez vos coûts",
+    text: "Un centre avec 30 clients par jour économise en moyenne 1h30 de temps d'équipement, vos clients s'équipant seuls. Plus besoin d'acheter, laver et gérer des tenues spécifiques : une économie directe sur le matériel et la masse salariale.",
+  },
+];
+---
+
+<section class="border-b border-border-soft/60">
+  <div class="mx-auto max-w-6xl px-6 py-20">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+        3 raisons d&apos;équiper votre centre avec <span class="brand-gradient-text">Fulgurance</span>
+      </h2>
+      <p class="mt-4 text-zinc-400">
+        Au-delà de la technologie, c&apos;est un véritable levier de développement pour votre activité.
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {reasons.map((reason) => (
+        <div class="rounded-2xl border border-border-soft bg-surface p-6 transition-colors hover:border-fulgurance-red/50">
+          <span class="text-sm font-mono font-semibold brand-gradient-text">{reason.number}</span>
+          <h3 class="mt-3 text-lg font-semibold">{reason.title}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-zinc-400">{reason.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

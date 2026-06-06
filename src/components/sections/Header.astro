@@ -1,0 +1,25 @@
+---
+import CtaButton from "@/components/ui/CtaButton.astro";
+---
+
+<header class="sticky top-0 z-50 border-b border-border-soft/60 bg-background/80 backdrop-blur-md">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <a href="/" aria-label="Fulgurance — Accueil">
+      <img
+        src="/images/fulgurance-logo.svg"
+        alt="Fulgurance"
+        width="150"
+        height="45"
+        class="h-8 w-auto"
+        loading="eager"
+      />
+    </a>
+    <CtaButton href="#rdv" class="hidden sm:inline-flex">Réserver mon appel</CtaButton>
+    <a
+      href="#rdv"
+      class="inline-flex sm:hidden items-center justify-center rounded-full brand-gradient px-4 py-2 text-xs font-semibold text-white"
+    >
+      RDV
+    </a>
+  </div>
+</header>

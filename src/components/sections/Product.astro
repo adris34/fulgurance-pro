@@ -1,0 +1,58 @@
+---
+const products = [
+  {
+    name: "PowerSuit",
+    tagline: "La combinaison d'électrostimulation nouvelle génération",
+    points: [
+      "Légère, robuste et hygiénique — lavable en machine",
+      "100 % fil de tissu à détection douce, sans aucun métal",
+      "Électrodes hydro-sensibles nouvelle génération",
+      "Sans fils ni scratch — conçue en Lycra High Muscle Compression",
+      "Liberté de mouvement totale pour un confort inégalé en séance",
+    ],
+  },
+  {
+    name: "Générateur ProPulse",
+    tagline: "Le cœur de la technologie Fulgurance",
+    points: [
+      "Léger, discret et entièrement sans fil",
+      "Connectivité dernière génération via l'application Fulgurance App",
+      "Pensé pour encadrer plusieurs personnes en simultané",
+      "Robustesse pensée pour un usage professionnel intensif",
+      "Programmes personnalisables selon les objectifs de vos clients",
+    ],
+  },
+];
+---
+
+<section class="border-b border-border-soft/60">
+  <div class="mx-auto max-w-6xl px-6 py-20">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+        Une technologie pensée pour un usage <span class="brand-gradient-text">professionnel</span>
+      </h2>
+      <p class="mt-4 text-zinc-400">
+        Conçue après des années d&apos;expérience terrain dans nos propres centres d&apos;EMS,
+        pour répondre aux faiblesses des solutions existantes : tarifs élevés, connectique fragile,
+        SAV inexistant.
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-6 lg:grid-cols-2">
+      {products.map((product) => (
+        <div class="rounded-2xl border border-border-soft bg-surface p-8">
+          <h3 class="text-xl font-semibold">{product.name}</h3>
+          <p class="mt-1 text-sm text-zinc-500">{product.tagline}</p>
+          <ul class="mt-6 space-y-3">
+            {product.points.map((point) => (
+              <li class="flex items-start gap-3 text-sm text-zinc-300">
+                <span class="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full brand-gradient" />
+                {point}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
