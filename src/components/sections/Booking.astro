@@ -74,17 +74,17 @@ const structureTypes = ["Salle de sport / centre EMS", "École ou club sportif",
       </button>
     </form>
 
-    <div id="booking-result" class="mx-auto mt-12 hidden max-w-xl rounded-2xl border border-border-soft bg-surface p-8 text-center">
+    <div id="booking-result" class="mx-auto mt-12 hidden max-w-3xl rounded-2xl border border-border-soft bg-surface p-4 sm:p-8 text-center">
       <h3 class="text-lg font-semibold">Merci ! Choisissez votre créneau ci-dessous</h3>
-      <div class="mt-6 flex h-[420px] items-center justify-center rounded-xl border border-dashed border-border-soft bg-surface-2 text-sm text-zinc-500">
-        Emplacement intégration Calendly / Cal.com — lien à venir
+      <div class="mt-6 overflow-hidden rounded-xl border border-border-soft bg-surface-2">
+        <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-decouverte-30min"></div>
       </div>
     </div>
   </div>
 </section>
 
 <script>
-  // TODO phase 2 : envoyer ces données vers Klaviyo / CRM avant d'afficher Calendly
+  // TODO phase 2 : envoyer ces données vers Klaviyo / CRM en plus de l'affichage Cal.com
   const form = document.querySelector<HTMLFormElement>("#booking-form");
   const result = document.querySelector<HTMLElement>("#booking-result");
 
@@ -93,4 +93,18 @@ const structureTypes = ["Salle de sport / centre EMS", "École ou club sportif",
     form.classList.add("hidden");
     result?.classList.remove("hidden");
   });
+</script>
+
+<script is:inline>
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.eu/embed/embed.js", "init");
+
+  Cal("init", "decouverte-30min", {origin:"https://app.cal.eu"});
+
+  Cal.ns["decouverte-30min"]("inline", {
+    elementOrSelector:"#my-cal-inline-decouverte-30min",
+    config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"auto"},
+    calLink: "fulgurance-pro/decouverte-30min",
+  });
+
+  Cal.ns["decouverte-30min"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#bf2136"},"dark":{"cal-brand":"#f01420"}},"hideEventTypeDetails":false,"layout":"month_view"});
 </script>
