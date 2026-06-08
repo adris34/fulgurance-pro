@@ -1,0 +1,83 @@
+---
+const coaches = [
+  { name: "Baptiste C.", role: "Coach sportif", img: null },
+  { name: "Anthony F.", role: "Gérant de salle", img: null },
+  { name: "Stéphanie H.", role: "Coach EMS", img: null },
+  { name: "Jaime C.", role: "Centre EMS", img: null },
+  { name: "Florian C.", role: "Coach indépendant", img: null },
+  { name: "Marie L.", role: "École sportive", img: null },
+  { name: "Thomas B.", role: "Gérant de salle", img: null },
+  { name: "Laura M.", role: "Coach sportif", img: null },
+];
+
+// Duplicate for infinite loop
+const doubled = [...coaches, ...coaches];
+---
+
+<section class="border-b border-border-soft/60 overflow-hidden py-20">
+  <div class="mx-auto max-w-7xl px-6 text-center mb-12">
+    <p class="mb-4 inline-flex items-center gap-2 rounded-full border border-border-soft bg-surface px-4 py-2 text-xs font-medium uppercase tracking-wider text-zinc-300">
+      <span class="h-2 w-2 rounded-full brand-gradient" />
+      Ils ont fait le choix Fulgurance
+    </p>
+    <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+      <span class="brand-gradient-text">+300 professionnels</span> équipés en France
+    </h2>
+    <p class="mt-4 text-zinc-400">
+      Coachs, gérants de salles, centres EMS — ils ont intégré Fulgurance à leur activité.
+    </p>
+  </div>
+
+  <!-- Infinite scroll track -->
+  <div class="relative">
+    <!-- Fade edges -->
+    <div class="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-background to-transparent" />
+    <div class="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-background to-transparent" />
+
+    <div class="flex gap-4 coaches-track">
+      {doubled.map((coach, i) => (
+        <div class="flex-shrink-0 w-[180px]" aria-hidden={i >= coaches.length ? "true" : undefined}>
+          <!-- Photo -->
+          <div class="relative w-full aspect-[3/4] rounded-2xl overflow-hidden border border-border-soft bg-surface-2">
+            {coach.img ? (
+              <img
+                src={coach.img}
+                alt={coach.name}
+                class="w-full h-full object-cover object-top"
+                loading="lazy"
+              />
+            ) : (
+              <!-- Placeholder gradient -->
+              <div class="w-full h-full bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-end justify-center pb-6">
+                <div class="h-16 w-16 rounded-full bg-gradient-to-br from-zinc-600 to-zinc-700 flex items-center justify-center text-xl font-bold text-zinc-400">
+                  {coach.name.charAt(0)}
+                </div>
+              </div>
+            )}
+          </div>
+          <!-- Name + role -->
+          <div class="mt-3 text-center">
+            <p class="text-sm font-semibold text-white">{coach.name}</p>
+            <p class="text-xs text-zinc-500 mt-0.5">{coach.role}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .coaches-track {
+    animation: scroll-coaches 30s linear infinite;
+    width: max-content;
+  }
+
+  .coaches-track:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll-coaches {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+</style>
