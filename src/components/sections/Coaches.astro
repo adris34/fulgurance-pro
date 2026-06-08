@@ -7,8 +7,8 @@ const coaches = [
   { name: "Florian Colotte", role: "Coach sportif", img: "/images/coaches/florian-colotte.jpg" },
 ];
 
-// Duplicate for infinite loop
-const doubled = [...coaches, ...coaches];
+// Quadruple for seamless infinite loop on all screen sizes
+const doubled = [...coaches, ...coaches, ...coaches, ...coaches];
 ---
 
 <section class="border-b border-border-soft/60 overflow-hidden py-20">
@@ -75,6 +75,6 @@ const doubled = [...coaches, ...coaches];
 
   @keyframes scroll-coaches {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    100% { transform: translateX(-25%); }
   }
 </style>
