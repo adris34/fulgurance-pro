@@ -1,48 +1,53 @@
 ---
-import VideoBlock from "@/components/ui/VideoBlock.astro";
-import Carousel from "@/components/ui/Carousel.astro";
-
 const testimonials = [
   {
-    label: "Témoignage — Gérant de salle de sport",
-    caption: "Retour d'expérience sur l'intégration de Fulgurance dans son centre",
-  },
-  {
-    label: "Témoignage — Coach sportif",
-    caption: "Comment la PowerSuit a transformé son offre de coaching",
-  },
-  {
-    label: "Témoignage — Gérant de centre EMS",
-    caption: "Pourquoi il a choisi Fulgurance pour équiper sa structure",
-  },
-  {
-    label: "Témoignage — Responsable d'école sportive",
-    caption: "L'intégration de Fulgurance dans les programmes d'entraînement",
+    name: "Geoffrey Darde",
+    title: "Gérant — Activ'Sport, Villeurbanne",
+    quote: "On ne fait pas que du sport, on réinvente la manière de bouger. Fulgurance nous a permis de proposer des résultats visibles en seulement 25 minutes par semaine — c'est ça qui fait la différence pour nos clients.",
+    img: "/images/testimonials/activsport-centre.avif",
+    tag: "Centre EMS",
   },
 ];
 ---
 
 <section class="border-b border-border-soft/60 bg-surface/40">
-  <div class="mx-auto max-w-[1600px] px-6 py-20">
+  <div class="mx-auto max-w-6xl px-6 py-20">
     <div class="mx-auto max-w-2xl text-center">
       <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
         Ils ont déjà fait le choix de <span class="brand-gradient-text">Fulgurance</span>
       </h2>
       <p class="mt-4 text-zinc-400">
-        Gérants de salles, coachs, centres EMS, écoles sportives — découvrez leurs retours d&apos;expérience.
+        Gérants de centres, coachs, écoles sportives — découvrez leurs retours d&apos;expérience.
       </p>
     </div>
 
-    <div class="mt-14">
-      <Carousel>
-        <Fragment slot="items">
-          {testimonials.map((t) => (
-            <div class="snap-start flex-shrink-0 min-w-[320px] sm:min-w-[400px] lg:min-w-[34%]">
-              <VideoBlock label={t.label} caption={t.caption} class="aspect-[4/5] sm:aspect-video" />
+    <div class="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {testimonials.map((t) => (
+        <div class="flex flex-col overflow-hidden rounded-2xl border border-border-soft bg-surface">
+          <!-- Photo -->
+          <div class="relative aspect-[4/3] w-full overflow-hidden">
+            <img
+              src={t.img}
+              alt={t.name}
+              class="h-full w-full object-cover object-center"
+              loading="lazy"
+            />
+            <span class="absolute left-3 top-3 rounded-full border border-border-soft bg-background/80 px-3 py-1 text-[10px] font-medium uppercase tracking-wider text-zinc-300 backdrop-blur-sm">
+              {t.tag}
+            </span>
+          </div>
+          <!-- Content -->
+          <div class="flex flex-1 flex-col p-6">
+            <p class="flex-1 text-sm leading-relaxed text-zinc-300 before:mr-1 before:text-fulgurance-red before:content-['"'] after:ml-0.5 after:text-fulgurance-red after:content-['"']">
+              {t.quote}
+            </p>
+            <div class="mt-5 border-t border-border-soft pt-4">
+              <p class="text-sm font-semibold text-white">{t.name}</p>
+              <p class="mt-0.5 text-xs text-zinc-500">{t.title}</p>
             </div>
-          ))}
-        </Fragment>
-      </Carousel>
+          </div>
+        </div>
+      ))}
     </div>
   </div>
 </section>
