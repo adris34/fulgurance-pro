@@ -1,4 +1,5 @@
 ---
+import CtaButton from "@/components/ui/CtaButton.astro";
 const reasons = [
   {
     number: "01",
@@ -37,6 +38,11 @@ const reasons = [
           <p class="mt-2 text-sm leading-relaxed text-zinc-400">{reason.text}</p>
         </div>
       ))}
+    </div>
+
+    <div class="mt-12 flex flex-col items-center gap-3">
+      <CtaButton href="https://cal.eu/fulgurance-pro/decouverte-30min">Réserver mon appel découverte</CtaButton>
+      <p class="text-xs text-zinc-500">Sans engagement — 30 minutes pour voir si Fulgurance est fait pour vous</p>
     </div>
   </div>
 </section>
