@@ -1,13 +1,14 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-
+import vercel from '@astrojs/vercel';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  // TODO : remplacer par le nom de domaine définitif une fois branché sur Vercel
-  site: 'https://fulgurance-pro.vercel.app',
+  site: 'https://www.fulgurance.com',
+  output: 'server',
+  adapter: vercel(),
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()]
