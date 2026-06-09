@@ -44,7 +44,9 @@ import Footer from "@/components/sections/Footer.astro";
 
 <!-- Fire Meta Pixel Lead event -->
 <script is:inline>
-  if (typeof fbq !== 'undefined') {
-    fbq('track', 'Lead');
-  }
+  window.addEventListener('load', function() {
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Lead');
+    }
+  });
 </script>
