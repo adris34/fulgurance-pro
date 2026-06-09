@@ -1,0 +1,50 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/sections/Header.astro";
+import Footer from "@/components/sections/Footer.astro";
+---
+
+<Layout
+  title="Démo réservée — Fulgurance"
+  description="Votre démo Fulgurance est confirmée. Notre équipe vous contacte sous 24h."
+>
+  <Header />
+  <main class="flex-1">
+    <div class="mx-auto flex max-w-2xl flex-col items-center px-6 py-32 text-center">
+
+      <div class="mb-8 flex h-16 w-16 items-center justify-center rounded-full bg-fulgurance-red/10 border border-fulgurance-red/30">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-fulgurance-red" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+
+      <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">
+        Votre démo est <span class="brand-gradient-text">confirmée</span> 🎉
+      </h1>
+      <p class="mt-4 text-zinc-400 max-w-md">
+        Notre équipe vous contacte sous 24h pour préparer votre échange. Vérifiez votre boîte mail (et vos spams) pour la confirmation Cal.com.
+      </p>
+
+      <div class="mt-10 flex flex-wrap justify-center gap-3">
+        {["Appel de 30 min", "Sans engagement", "Équipe française"].map((item) => (
+          <span class="inline-flex items-center gap-1.5 rounded-full border border-border-soft bg-surface px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-wider text-zinc-400">
+            <span class="h-1.5 w-1.5 rounded-full brand-gradient" />
+            {item}
+          </span>
+        ))}
+      </div>
+
+      <a href="/" class="mt-12 text-sm text-zinc-500 underline underline-offset-4 hover:text-white">
+        ← Retour à l'accueil
+      </a>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<!-- Fire Meta Pixel Lead event -->
+<script is:inline>
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'Lead');
+  }
+</script>
