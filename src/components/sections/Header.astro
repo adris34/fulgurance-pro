@@ -2,9 +2,9 @@
 import CtaButton from "@/components/ui/CtaButton.astro";
 
 const navLinks = [
-  { label: "Proposez EMS à vos clients", href: "#pourquoi-ems" },
+  { label: "Pourquoi l'EMS ?", href: "#pourquoi-ems" },
   { label: "Avis clients", href: "#avis" },
-  { label: "Application & Séances", href: "#vsl" },
+  { label: "App & Séances", href: "#vsl" },
   { label: "Garanties", href: "#garanties" },
   { label: "QVEMA", href: "#qvema" },
   { label: "À Propos", href: "#a-propos" },
@@ -27,7 +27,7 @@ const navLinks = [
     </a>
 
     <!-- Desktop nav -->
-    <nav class="hidden lg:flex flex-1 items-center justify-center gap-6">
+    <nav class="hidden lg:flex flex-1 items-center justify-center gap-2">
       {navLinks.map((link) => (
         <a
           href={link.href}
