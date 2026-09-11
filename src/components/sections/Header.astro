@@ -38,18 +38,20 @@ const navLinks = [
       ))}
     </nav>
 
-    <!-- Mobile : burger gauche, logo centre, bouton droite -->
-    <button
-      id="menu-toggle"
-      class="lg:hidden flex flex-col gap-1.5 p-1 mr-auto"
-      aria-label="Menu"
-    >
-      <span class="block h-0.5 w-6 bg-white"></span>
-      <span class="block h-0.5 w-6 bg-white"></span>
-      <span class="block h-0.5 w-6 bg-white"></span>
-    </button>
+    <!-- Mobile : 3 colonnes égales (burger | logo | bouton) -->
+    <div class="flex flex-1 items-center justify-start lg:hidden">
+      <button
+        id="menu-toggle"
+        class="flex flex-col gap-1.5 p-1"
+        aria-label="Menu"
+      >
+        <span class="block h-0.5 w-6 bg-white"></span>
+        <span class="block h-0.5 w-6 bg-white"></span>
+        <span class="block h-0.5 w-6 bg-white"></span>
+      </button>
+    </div>
 
-    <a href="/" aria-label="Fulgurance — Accueil" class="absolute left-1/2 -translate-x-1/2 lg:hidden">
+    <a href="/" aria-label="Fulgurance — Accueil" class="lg:hidden">
       <img
         src="/images/fulgurance-logo.svg"
         alt="Fulgurance"
@@ -58,7 +60,7 @@ const navLinks = [
       />
     </a>
 
-    <div class="ml-auto flex items-center gap-2">
+    <div class="flex flex-1 items-center justify-end gap-2">
       <!-- Desktop CTA -->
       <div class="hidden lg:block">
         <CtaButton href="https://cal.eu/fulgurance-pro/decouverte-30min">Votre Démo</CtaButton>
