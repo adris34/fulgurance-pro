@@ -15,16 +15,18 @@ const navLinks = [
   <div class="relative mx-auto flex max-w-screen-2xl items-center px-6 py-4 lg:px-16">
 
     <!-- Logo : visible uniquement sur desktop -->
-    <a href="/" aria-label="Fulgurance — Accueil" class="hidden lg:block">
-      <img
-        src="/images/fulgurance-logo.svg"
-        alt="Fulgurance"
-        width="150"
-        height="45"
-        class="h-8 w-auto"
-        loading="eager"
-      />
-    </a>
+    <div class="hidden lg:flex flex-1 items-center justify-start">
+      <a href="/" aria-label="Fulgurance — Accueil">
+        <img
+          src="/images/fulgurance-logo.svg"
+          alt="Fulgurance"
+          width="150"
+          height="45"
+          class="h-8 w-auto"
+          loading="eager"
+        />
+      </a>
+    </div>
 
     <!-- Desktop nav -->
     <nav class="hidden lg:flex flex-1 items-center justify-center gap-2">
