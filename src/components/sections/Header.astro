@@ -12,7 +12,7 @@ const navLinks = [
 ---
 
 <header class="sticky top-0 z-50 border-b border-border-soft/60 bg-background/80 backdrop-blur-md">
-  <div class="mx-auto flex max-w-screen-2xl items-center px-6 py-4 lg:px-16">
+  <div class="relative mx-auto flex max-w-screen-2xl items-center px-6 py-4 lg:px-16">
 
     <!-- Logo : visible uniquement sur desktop -->
     <a href="/" aria-label="Fulgurance — Accueil" class="hidden lg:block">
@@ -38,27 +38,33 @@ const navLinks = [
       ))}
     </nav>
 
-    <!-- Mobile : bouton centré + burger à droite -->
-    <div class="flex flex-1 items-center justify-center lg:hidden">
-      <CtaButton href="https://cal.eu/fulgurance-pro/decouverte-30min" class="!px-5 !py-2.5 !text-sm">Votre Démo</CtaButton>
-    </div>
+    <!-- Mobile : burger gauche, logo centre, bouton droite -->
+    <button
+      id="menu-toggle"
+      class="lg:hidden flex flex-col gap-1.5 p-1 mr-auto"
+      aria-label="Menu"
+    >
+      <span class="block h-0.5 w-6 bg-white"></span>
+      <span class="block h-0.5 w-6 bg-white"></span>
+      <span class="block h-0.5 w-6 bg-white"></span>
+    </button>
 
-    <div class="flex items-center gap-2">
+    <a href="/" aria-label="Fulgurance — Accueil" class="absolute left-1/2 -translate-x-1/2 lg:hidden">
+      <img
+        src="/images/fulgurance-logo.svg"
+        alt="Fulgurance"
+        class="h-8 w-auto"
+        loading="eager"
+      />
+    </a>
+
+    <div class="ml-auto flex items-center gap-2">
       <!-- Desktop CTA -->
       <div class="hidden lg:block">
         <CtaButton href="https://cal.eu/fulgurance-pro/decouverte-30min">Votre Démo</CtaButton>
       </div>
-
-      <!-- Burger (mobile/tablet) -->
-      <button
-        id="menu-toggle"
-        class="lg:hidden flex flex-col gap-1.5 p-1"
-        aria-label="Menu"
-      >
-        <span class="block h-0.5 w-6 bg-white"></span>
-        <span class="block h-0.5 w-6 bg-white"></span>
-        <span class="block h-0.5 w-6 bg-white"></span>
-      </button>
+      <!-- Mobile CTA -->
+      <CtaButton href="https://cal.eu/fulgurance-pro/decouverte-30min" class="lg:hidden !px-4 !py-2 !text-xs">Votre Démo</CtaButton>
     </div>
   </div>
 
