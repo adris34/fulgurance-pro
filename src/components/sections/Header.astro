@@ -7,7 +7,7 @@ const navLinks = [
   { label: "Application & Séances", href: "#vsl" },
   { label: "Garanties", href: "#garanties" },
   { label: "QVEMA", href: "#qvema" },
-  { label: "À Propos", href: "#a-propos" },
+  { label: "Offre particulier", href: "https://fulgurance-particulier.com/", external: true },
 ];
 ---
 
@@ -33,6 +33,8 @@ const navLinks = [
       {navLinks.map((link) => (
         <a
           href={link.href}
+          target={link.external ? "_blank" : undefined}
+          rel={link.external ? "noopener noreferrer" : undefined}
           class="whitespace-nowrap text-sm text-white px-3 py-1.5 rounded-full transition-colors hover:bg-white hover:text-black"
         >
           {link.label}
@@ -78,6 +80,8 @@ const navLinks = [
       {navLinks.map((link) => (
         <a
           href={link.href}
+          target={link.external ? "_blank" : undefined}
+          rel={link.external ? "noopener noreferrer" : undefined}
           class="text-sm text-white px-3 py-1.5 rounded-full transition-colors hover:bg-white hover:text-black"
           data-mobile-link
         >
