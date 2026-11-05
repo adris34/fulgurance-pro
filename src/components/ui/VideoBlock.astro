@@ -25,9 +25,12 @@ const uid = `video-${Math.random().toString(36).slice(2, 9)}`;
     aria-label={`Lire la vidéo : ${label}`}
   >
     {youtubeId ? (
-      <span
-        class="absolute inset-0 bg-cover bg-center opacity-60 transition-opacity group-hover:opacity-40"
-        style={`background-image: url(https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg)`}
+      <img
+        src={`https://i.ytimg.com/vi/${youtubeId}/maxresdefault.jpg`}
+        alt=""
+        loading="lazy"
+        class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+        onerror={`this.onerror=null;this.src='https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg'`}
       />
     ) : (
       <span class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(240,20,32,0.18),transparent_55%)]" />
@@ -39,10 +42,10 @@ const uid = `video-${Math.random().toString(36).slice(2, 9)}`;
       </svg>
     </span>
 
-    <span class="relative max-w-sm text-sm font-medium uppercase tracking-wide text-zinc-300">
-      {label}
-    </span>
-    {caption && <span class="relative max-w-xs text-xs text-zinc-500">{caption}</span>}
+    {!youtubeId && (
+      <span class="relative max-w-sm text-sm font-medium uppercase tracking-wide text-zinc-300">{label}</span>
+    )}
+    {!youtubeId && caption && <span class="relative max-w-xs text-xs text-zinc-500">{caption}</span>}
     {!youtubeId && (
       <span class="relative rounded-full border border-border-soft bg-black/30 px-3 py-1 text-[11px] uppercase tracking-wider text-zinc-500">
         Emplacement vidéo — lien à venir
