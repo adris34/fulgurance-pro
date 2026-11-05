@@ -65,7 +65,7 @@ const uid = `video-${Math.random().toString(36).slice(2, 9)}`;
         const label = block.dataset.label ?? "Vidéo Fulgurance";
         const iframe = document.createElement("iframe");
         iframe.className = "absolute inset-0 h-full w-full";
-        iframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1`;
+        iframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&vq=hd1080&hd=1`;
         iframe.title = label;
         iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
         iframe.allowFullscreen = true;
