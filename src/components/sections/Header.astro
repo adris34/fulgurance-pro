@@ -35,7 +35,7 @@ const navLinks = [
           href={link.href}
           target={link.external ? "_blank" : undefined}
           rel={link.external ? "noopener noreferrer" : undefined}
-          class="whitespace-nowrap text-sm text-white px-3 py-1.5 rounded-full transition-colors hover:bg-white hover:text-black"
+          class="whitespace-nowrap text-sm text-foreground px-3 py-1.5 rounded-full transition-colors hover:bg-foreground hover:text-background"
         >
           {link.label}
         </a>
@@ -49,9 +49,9 @@ const navLinks = [
         class="flex flex-col gap-1.5 p-1"
         aria-label="Menu"
       >
-        <span class="block h-0.5 w-6 bg-white"></span>
-        <span class="block h-0.5 w-6 bg-white"></span>
-        <span class="block h-0.5 w-6 bg-white"></span>
+        <span class="block h-0.5 w-6 bg-foreground"></span>
+        <span class="block h-0.5 w-6 bg-foreground"></span>
+        <span class="block h-0.5 w-6 bg-foreground"></span>
       </button>
     </div>
 
@@ -82,7 +82,7 @@ const navLinks = [
           href={link.href}
           target={link.external ? "_blank" : undefined}
           rel={link.external ? "noopener noreferrer" : undefined}
-          class="text-sm text-white px-3 py-1.5 rounded-full transition-colors hover:bg-white hover:text-black"
+          class="text-sm text-foreground px-3 py-1.5 rounded-full transition-colors hover:bg-foreground hover:text-background"
           data-mobile-link
         >
           {link.label}
