@@ -1,41 +1,28 @@
 ---
 const partners = [
-  {
-    name: "BIC de Montpellier",
-    label: "Incubé par le BIC de Montpellier",
-    desc: "Top 3 des incubateurs mondiaux de start-up",
-    logo: "/images/bic-montpellier.png",
-  },
-  {
-    name: "La French Tech",
-    label: "Financé par la French Tech",
-    desc: "Soutien à l'innovation française",
-    logo: "/images/french-tech.png",
-  },
-  {
-    name: "BpiFrance",
-    label: "Soutenu par BpiFrance",
-    desc: "La banque publique d'investissement",
-    logo: "/images/bpifrance.png",
-  },
+  { name: "BIC de Montpellier", label: "Incubé par le BIC de Montpellier", desc: "Top 3 des incubateurs mondiaux de start-up", logo: "/images/bic-montpellier.png" },
+  { name: "La French Tech", label: "Financé par la French Tech", desc: "Soutien à l'innovation française", logo: "/images/french-tech.png" },
+  { name: "Bpifrance", label: "Soutenu par Bpifrance", desc: "La banque publique d'investissement", logo: "/images/bpifrance.png" },
 ];
 ---
 
-<section class="border-b border-border-soft/60 bg-background py-20 lg:py-28">
+<section class="fg-light py-20 lg:py-24">
   <div class="mx-auto max-w-6xl px-6">
     <div class="mb-12 text-center">
-      <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-fulgurance-red">Ils nous accompagnent</p>
-      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
-        Soutenus par les <span class="text-fulgurance-red">meilleurs</span>
+      <p class="fg-eyebrow">Ils nous accompagnent</p>
+      <h2 class="fg-title text-5xl sm:text-6xl">
+        Soutenus par les <span class="text-[#C8161D]">meilleurs</span>
       </h2>
     </div>
 
-    <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
+    <div class="grid grid-cols-1 gap-5 sm:grid-cols-3">
       {partners.map((p) => (
-        <div class="flex flex-col items-center gap-4 rounded-2xl border border-border-soft bg-surface p-8 text-center">
-          <img src={p.logo} alt={p.name} class="h-14 w-auto object-contain" />
-          <p class="text-sm font-semibold uppercase tracking-wide text-white">{p.label}</p>
-          <p class="text-xs text-zinc-500">{p.desc}</p>
+        <div class="fg-card items-center text-center">
+          <div class="flex h-24 items-center justify-center">
+            <img src={p.logo} alt={p.name} class="max-h-24 w-auto object-contain" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.alt,className:'fg-title text-2xl not-italic'}))" />
+          </div>
+          <p class="fg-title mt-6 text-xl not-italic">{p.label}</p>
+          <p class="mt-2 text-sm text-[#3a3a3a]">{p.desc}</p>
         </div>
       ))}
     </div>

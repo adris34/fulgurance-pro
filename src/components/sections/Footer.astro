@@ -1,21 +1,28 @@
 ---
-import CtaButton from "@/components/ui/CtaButton.astro";
+const calUrl = "https://www.cal.eu/fulgurance-pro/decouverte-30min";
 ---
 
-<footer class="bg-surface/40">
-  <div class="mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 py-16 text-center">
-    <img src="/images/fulgurance-logo.svg" alt="Fulgurance" width="140" height="42" class="h-7 w-auto" />
-    <h2 class="max-w-md text-xl font-semibold">
-      Prêt à transformer votre centre avec la technologie Fulgurance ?
-    </h2>
-    <CtaButton href="https://www.cal.eu/fulgurance-pro/decouverte-30min?month=2026-10&date=2026-10-02" target="_blank" rel="noopener noreferrer">Réservez une Démo</CtaButton>
+<footer>
+  <div class="bg-[#C8161D] py-20 text-center text-white">
+    <div class="mx-auto max-w-3xl px-6">
+      <h2 class="fg-title text-5xl text-white sm:text-6xl">Prêt à essayer ?</h2>
+      <p class="mt-4 text-lg">Visio découverte gratuite et sans engagement.</p>
+      <a
+        href={calUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-8 inline-flex rounded-lg bg-white px-7 py-3.5 text-sm font-semibold text-[#111] transition-transform hover:scale-[1.03]"
+      >
+        Choisir mon créneau
+      </a>
+    </div>
   </div>
-  <div class="border-t border-border-soft/40">
-    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 py-5 text-xs text-zinc-600 sm:flex-row">
+  <div class="bg-[#EFEDE9] text-[#3a3a3a]">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 py-6 text-sm sm:flex-row">
       <span>Fulgurance SAS · 10 rue Mohamed V, 34080 Montpellier</span>
-      <div class="flex items-center gap-4">
-        <a href="https://wa.me/33000000000" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-400 underline underline-offset-2">WhatsApp</a>
-        <a href="/mentions-legales" class="hover:text-zinc-400 underline underline-offset-2">Mentions légales</a>
+      <div class="flex items-center gap-5">
+        <a href="https://wa.me/33687784426" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-[#C8161D]">WhatsApp</a>
+        <a href="/mentions-legales" class="underline underline-offset-2 hover:text-[#C8161D]">Mentions légales</a>
       </div>
     </div>
   </div>
