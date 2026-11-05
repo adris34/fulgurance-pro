@@ -11,14 +11,14 @@ const navLinks = [
 ];
 ---
 
-<header class="sticky top-0 z-50 border-b border-border-soft/60 bg-background/80 backdrop-blur-md">
+<header class="sticky top-0 z-50 border-b border-border-soft bg-white">
   <div class="relative mx-auto flex max-w-screen-2xl items-center px-6 py-4 lg:px-16">
 
     <!-- Logo : visible uniquement sur desktop -->
     <div class="hidden lg:flex flex-1 items-center justify-start">
       <a href="/" aria-label="Fulgurance — Accueil">
         <img
-          src="/images/fulgurance-logo.svg"
+          src="/images/fulgurance-logo-dark.svg"
           alt="Fulgurance"
           width="150"
           height="45"
@@ -35,7 +35,7 @@ const navLinks = [
           href={link.href}
           target={link.external ? "_blank" : undefined}
           rel={link.external ? "noopener noreferrer" : undefined}
-          class="whitespace-nowrap text-sm text-foreground px-3 py-1.5 rounded-full transition-colors hover:bg-foreground hover:text-background"
+          class="whitespace-nowrap text-sm font-medium text-[#111] px-3 py-1.5 rounded-full transition-colors hover:bg-foreground hover:text-background"
         >
           {link.label}
         </a>
@@ -57,7 +57,7 @@ const navLinks = [
 
     <a href="/" aria-label="Fulgurance — Accueil" class="lg:hidden">
       <img
-        src="/images/fulgurance-logo.svg"
+        src="/images/fulgurance-logo-dark.svg"
         alt="Fulgurance"
         class="h-8 w-auto"
         loading="eager"
@@ -75,14 +75,14 @@ const navLinks = [
   </div>
 
   <!-- Mobile menu -->
-  <div id="mobile-menu" class="hidden lg:hidden border-t border-border-soft/60 bg-background px-6 py-4">
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-border-soft bg-white px-6 py-4">
     <nav class="flex flex-col gap-4">
       {navLinks.map((link) => (
         <a
           href={link.href}
           target={link.external ? "_blank" : undefined}
           rel={link.external ? "noopener noreferrer" : undefined}
-          class="text-sm text-foreground px-3 py-1.5 rounded-full transition-colors hover:bg-foreground hover:text-background"
+          class="text-sm font-medium text-[#111] px-3 py-1.5 rounded-full transition-colors hover:bg-foreground hover:text-background"
           data-mobile-link
         >
           {link.label}
