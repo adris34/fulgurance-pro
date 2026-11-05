@@ -1,0 +1,51 @@
+---
+const stats = [
+  { number: "100 %", label: "Confort maximal", desc: "Sans fil, sans câble, sans scratch", index: "01" },
+  { number: "20", label: "Électrodes", desc: "Réparties sur les zones musculaires du corps", index: "02" },
+  { number: "0", label: "Humidification", desc: "Des électrodes sèches, prêtes à l'emploi", index: "03" },
+  { number: "3 min", label: "Installation", desc: "On enfile, on connecte, on s'entraîne", index: "04" },
+];
+
+const features = [
+  { icon: "🏃", label: "Liberté de mouvement", desc: "Totale, pendant toute la séance", index: "05" },
+  { icon: "💧", label: "Hygiène optimale", desc: "Combinaison lavable en machine", index: "06" },
+  { icon: "🌍", label: "Aucune limite", desc: "En intérieur comme en extérieur", index: "07" },
+  { icon: "⚡", label: "Puissance et intensité", desc: "Un ressenti musculaire renforcé", index: "08" },
+];
+---
+
+<section class="border-b border-border-soft/60 bg-background py-20 lg:py-28">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="mb-14 text-center">
+      <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-fulgurance-red">Nouvelle génération</p>
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+        La technologie <span class="text-fulgurance-red">Fulgurance</span>
+      </h2>
+      <p class="mt-4 text-zinc-400">Tout ce qu'il faut pour une séance intense, sans les contraintes.</p>
+    </div>
+
+    <!-- Stats cards -->
+    <div class="mb-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
+      {stats.map((s) => (
+        <div class="relative rounded-2xl border border-border-soft bg-surface p-6">
+          <span class="absolute right-4 top-4 text-xs text-zinc-600">{s.index}</span>
+          <p class="mb-1 text-3xl font-bold text-fulgurance-red">{s.number}</p>
+          <p class="text-sm font-semibold uppercase tracking-wide text-white">{s.label}</p>
+          <p class="mt-1 text-xs text-zinc-500">{s.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Feature cards -->
+    <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
+      {features.map((f) => (
+        <div class="relative rounded-2xl border border-border-soft bg-surface p-6">
+          <span class="absolute right-4 top-4 text-xs text-zinc-600">{f.index}</span>
+          <span class="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-fulgurance-red/10 text-lg">{f.icon}</span>
+          <p class="text-sm font-semibold uppercase tracking-wide text-white">{f.label}</p>
+          <p class="mt-1 text-xs text-zinc-500">{f.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

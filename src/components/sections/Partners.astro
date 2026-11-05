@@ -1,0 +1,43 @@
+---
+const partners = [
+  {
+    name: "BIC de Montpellier",
+    label: "Incubé par le BIC de Montpellier",
+    desc: "Top 3 des incubateurs mondiaux de start-up",
+    logo: "/images/bic-montpellier.png",
+  },
+  {
+    name: "La French Tech",
+    label: "Financé par la French Tech",
+    desc: "Soutien à l'innovation française",
+    logo: "/images/french-tech.png",
+  },
+  {
+    name: "BpiFrance",
+    label: "Soutenu par BpiFrance",
+    desc: "La banque publique d'investissement",
+    logo: "/images/bpifrance.png",
+  },
+];
+---
+
+<section class="border-b border-border-soft/60 bg-background py-20 lg:py-28">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="mb-12 text-center">
+      <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-fulgurance-red">Ils nous accompagnent</p>
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+        Soutenus par les <span class="text-fulgurance-red">meilleurs</span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
+      {partners.map((p) => (
+        <div class="flex flex-col items-center gap-4 rounded-2xl border border-border-soft bg-surface p-8 text-center">
+          <img src={p.logo} alt={p.name} class="h-14 w-auto object-contain" />
+          <p class="text-sm font-semibold uppercase tracking-wide text-white">{p.label}</p>
+          <p class="text-xs text-zinc-500">{p.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
