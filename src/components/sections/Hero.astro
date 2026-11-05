@@ -4,7 +4,8 @@ import VideoBlock from "@/components/ui/VideoBlock.astro";
 ---
 
 <section class="relative overflow-hidden border-b border-border-soft/60">
-  <div class="relative mx-auto flex max-w-6xl flex-col items-center px-6 py-20 text-center lg:py-28">
+  <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 lg:grid-cols-[1fr_1.15fr] lg:py-24">
+    <div class="flex flex-col items-center text-center lg:items-start lg:text-left">
     <p class="mb-6 inline-flex items-center gap-2 rounded-full border border-border-soft bg-surface px-4 py-2 text-xs font-medium uppercase tracking-wider text-zinc-300">
       <span class="h-2 w-2 rounded-full brand-gradient" />
       Qui Veut Être Mon Associé : Saison 4 · M6
@@ -23,7 +24,7 @@ import VideoBlock from "@/components/ui/VideoBlock.astro";
       </div>
     </div>
 
-    <h1 class="max-w-5xl">
+    <h1 class="max-w-xl">
       La technologie EMS<br /><span class="text-[#C8161D]">nouvelle génération</span>
     </h1>
     <p class="fg-title mt-6 text-xl sm:text-2xl" style="font-style:normal">Plus de liberté. Plus de confort. Plus de simplicité.</p>
@@ -36,7 +37,10 @@ import VideoBlock from "@/components/ui/VideoBlock.astro";
       </a>
     </div>
 
-    <div class="mt-10 w-full max-w-5xl">
+    </div>
+
+    <div class="w-full">
+    <div class="w-full">
       <VideoBlock
         youtubeId="f9udAwLgrQw"
         label="Équipez vos clients en quelques secondes et pilotez vos séances de groupe ou individuelles"
@@ -51,6 +55,7 @@ import VideoBlock from "@/components/ui/VideoBlock.astro";
           {item}
         </span>
       ))}
+    </div>
     </div>
   </div>
 </section>
