@@ -42,12 +42,3 @@ import Footer from "@/components/sections/Footer.astro";
   </main>
   <Footer />
 </Layout>
-
-<!-- Fire Meta Pixel Lead event -->
-<script is:inline>
-  window.addEventListener('load', function() {
-    if (typeof fbq !== 'undefined') {
-      fbq('track', 'Lead');
-    }
-  });
-</script>
