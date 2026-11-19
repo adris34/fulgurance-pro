@@ -42,35 +42,33 @@ const navLinks = [
       ))}
     </nav>
 
-    <!-- Mobile : 3 colonnes égales (burger | logo | bouton) -->
-    <div class="flex flex-1 items-center justify-start lg:hidden">
+    <!-- Mobile : logo à gauche, bouton + menu à droite -->
+    <a href="/" aria-label="Fulgurance — Accueil" class="lg:hidden shrink-0 mr-auto">
+      <img
+        src="/images/fulgurance-logo-dark.svg"
+        alt="Fulgurance"
+        class="h-7 w-auto"
+        loading="eager"
+      />
+    </a>
+
+    <div class="flex flex-1 items-center justify-end gap-3 lg:gap-2">
+      <!-- Desktop CTA -->
+      <div class="hidden lg:block">
+        <CtaButton href="https://cal.eu/fulgurance-pro/decouverte-30min">Prendre RDV</CtaButton>
+      </div>
+      <!-- Mobile CTA -->
+      <CtaButton href="https://cal.eu/fulgurance-pro/decouverte-30min" class="lg:hidden !px-3 !py-2 !text-[11px] whitespace-nowrap">Prendre RDV</CtaButton>
+      <!-- Menu burger (mobile) -->
       <button
         id="menu-toggle"
-        class="flex flex-col gap-1.5 p-1"
+        class="flex flex-col gap-1.5 p-1 lg:hidden"
         aria-label="Menu"
       >
         <span class="block h-0.5 w-6 bg-foreground"></span>
         <span class="block h-0.5 w-6 bg-foreground"></span>
         <span class="block h-0.5 w-6 bg-foreground"></span>
       </button>
-    </div>
-
-    <a href="/" aria-label="Fulgurance — Accueil" class="lg:hidden">
-      <img
-        src="/images/fulgurance-logo-dark.svg"
-        alt="Fulgurance"
-        class="h-8 w-auto"
-        loading="eager"
-      />
-    </a>
-
-    <div class="flex flex-1 items-center justify-end gap-2">
-      <!-- Desktop CTA -->
-      <div class="hidden lg:block">
-        <CtaButton href="https://cal.eu/fulgurance-pro/decouverte-30min">Prendre RDV</CtaButton>
-      </div>
-      <!-- Mobile CTA -->
-      <CtaButton href="https://cal.eu/fulgurance-pro/decouverte-30min" class="lg:hidden !px-4 !py-2 !text-xs">Prendre RDV</CtaButton>
     </div>
   </div>
 
